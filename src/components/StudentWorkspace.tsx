@@ -35,10 +35,6 @@ export default function StudentWorkspace({ lessonId }: { lessonId: string }) {
   const handleRunCode = () => {
     // Basic simulation logic based on correctOutput. 
     // In reality, this would hit an API endpoint or use a local executor (like Pyodide).
-    // Here we do a naive check for the prototype.
-    const normalizedInput = codeInput.replace(/\s+/g, '');
-    const normalizedRequired = lesson.correctOutput.replace(/\s+/g, '');
-    
     // For python-lists-1 specifically, we look for 'orange' assignment and print(cart)
     const passed = codeInput.includes(lesson.correctOutput) || 
                   (codeInput.includes('cart[0]') && codeInput.includes('orange') && codeInput.includes('print(cart)')) ||

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { lessons, LessonData } from '../data/lessons';
+import { lessons, type LessonData } from '../data/lessons';
 
 export function useLesson(lessonId: string) {
   const [lesson, setLesson] = useState<LessonData | null>(null);
